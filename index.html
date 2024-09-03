@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .link-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+        .link-card:hover {
+            transform: scale(1.05);
+        }
+        .link-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        .link-card a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>我的导航页</h1>
+    <div class="container">
+        <div class="link-card">
+            <a href="https://www.google.com" target="_blank">Google</a>
+        </div>
+        <div class="link-card">
+            <a href="https://www.bing.com" target="_blank">Bing</a>
+        </div>
+        <div class="link-card">
+            <a href="https://www.github.com" target="_blank">GitHub</a>
+        </div>
+        <div class="link-card">
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        </div>
+        <div class="link-card">
+            <a href="https://www.baidu.com" target="_blank">百度</a>
+        </div>
+        <div class="link-card">
+            <a href="https://www.zhihu.com" target="_blank">知乎</a>
+        </div>
+    </div>
+</body>
+</html>
