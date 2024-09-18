@@ -52,21 +52,35 @@
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 15px; /* 调整盒子内边距 */
             margin: 10px;
             text-align: center;
-            width: 200px;
+            width: 150px; /* 调整宽度 */
+            height: 100px; /* 调整高度 */
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .link-card:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+        .link-card a {
+            text-decoration: none; /* 去除下划线 */
+            color: inherit; /* 保持文本颜色一致 */
+        }
+        .link-card a:visited {
+            color: inherit; /* 点击后颜色保持不变 */
+        }
+        .link-card a:hover {
+            color: inherit; /* 悬停时颜色保持一致 */
+        }
         .link-card span {
             display: block;
             margin-bottom: 10px;
-            color: #007bff; /* 设置为与超链接相同的蓝色 */
+            color: #333; /* 设置非超链接文本颜色为黑色 */
         }
         .link-card .copied {
             color: green;
@@ -123,7 +137,7 @@
                 // 隐藏提示信息在几秒后
                 setTimeout(() => {
                     msg.classList.remove('visible');
-                }, 2000);
+                }, 1000);
             }, function(err) {
                 console.error('复制失败', err);
             });
