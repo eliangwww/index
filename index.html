@@ -78,8 +78,10 @@
             color: inherit; /* 悬停时颜色保持一致 */
         }
         .link-card span {
-            display: block;
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            height: 100%; /* 占满父容器的高度 */
             color: #333; /* 设置非超链接文本颜色为黑色 */
         }
         .link-card .copied {
