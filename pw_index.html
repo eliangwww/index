@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Sub Release</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/images/bkg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: backgroundAnimation 15s infinite alternate;
+            opacity: 0;
+            animation: fadeIn 2s forwards, backgroundAnimation 15s infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes backgroundAnimation {
+            0% { filter: brightness(1) contrast(1); }
+            50% { filter: brightness(0.8) contrast(1.2); }
+            100% { filter: brightness(1) contrast(1); }
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: textGlow 3s infinite alternate;
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+            100% { text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8); }
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .link-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px; /* 调整盒子内边距 */
+            margin: 10px;
+            text-align: center;
+            width: 150px; /* 调整宽度 */
+            height: 150px; /* 调整高度 */
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .link-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .link-card a {
+            text-decoration: none; /* 去除下划线 */
+            color: deepskyblue; /* 设置为天蓝色 */
+            display: block; /* 确保链接占满容器 */
+        }
+        .link-card a:visited {
+            color: deepskyblue; /* 点击后的颜色保持天蓝色 */
+        }
+        .link-card a:hover {
+            color: deepskyblue; /* 悬停时颜色保持天蓝色 */
+        }
+        .link-card span {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            height: 100%; /* 占满父容器的高度 */
+            color: deepskyblue; /* 设置为天蓝色 */
+        }
+        .link-card .copied {
+            color: green;
+            font-size: 12px;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .link-card .copied.visible {
+            opacity: 1;
+        }
+        .password-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .password-container input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .password-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: deepskyblue;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .password-container button:hover {
+            background-color: dodgerblue;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>订阅发布地址</h1>
+    <div class="password-container">
+        <input type="password" id="password" placeholder="输入密码">
+        <button onclick="checkPassword()">提交</button>
+        <div class="error-message" id="error-message">密码错误</div>
+    </div>
+    <div class="container" id="links-container" style="display: none;">
+        <div class="link-card">
+            <a href="https://sublink.cfip.nyc.mn/" target="_blank">订阅转换</a>
+        </div>
+        <div class="link-card">
+            <a href="clash://install-config?url=https://https://openvless.hujunge.ggff.net//878ed365-55a5-4778-b58d-b8837996a3e8">一键导入</a>
+        </div>
+        <div class="link-card">
+            <a href="https://nezha.cmliussss.com/">CM-Socks5</a>
+        </div>
+        <div class="link-card" onclick="copyToClipboard('https://trojan.cfip.nyc.mn/99999', this)">
+            <span>EpeiusTROJAN</span>
+            <div class="copied">链接已复制!</div>
+        </div>
+        <div class="link-card" onclick="copyToClipboard('https://trojan.hujunge.nyc.mn/99999', this)">
+            <span>Clash 推荐</span>
+            <div class="copied">链接已复制!</div>
+        </div>
+        <div class="link-card" onclick="copyToClipboard('https://sub.cfip.nyc.mn/666', this)">
+            <span>三网优化</span>
+            <div class="copied">链接已复制!</div>
+        </div>
+        <div class="link-card">
+            <a href="https://t.me/eliang_privatebot">Contact Me</a>
+        </div>
+    </div>
+
+    <script>
+        const correctPassword = 'yourpassword'; // 设置你的密码
+
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            const linksContainer = document.getElementById('links-container');
+            
+            if (passwordInput === correctPassword) {
+                // 显示链接容器
+                linksContainer.style.display = 'flex';
+                // 隐藏密码输入和错误信息
+                document.querySelector('.password-container').style.display = 'none';
+            } else {
+                // 显示错误信息
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function copyToClipboard(text, element) {
+            navigator.clipboard.writeText(text).then(function() {
+                // 清除其他元素的复制提示
+                const copiedMessages = document.querySelectorAll('.copied');
+                copiedMessages.forEach(msg => msg.classList.remove('visible'));
+
+                // 显示当前点击元素的复制提示
+                const msg = element.querySelector('.copied');
+                msg.classList.add('visible');
+
+                // 隐藏提示信息在几秒后
+                setTimeout(() => {
+                    msg.classList.remove('visible');
+                }, 1000);
+            }, function(err) {
+                console.error('复制失败', err);
+            });
+        }
+    </script>
+</body>
+</html>
