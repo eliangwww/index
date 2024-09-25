@@ -10,11 +10,21 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('/images/bkg.jpg') no-repeat center center fixed;
-            background-size: cover;
             color: #333;
             overflow-x: hidden;
         }
+
+        /* Full-screen background video */
+        video.background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure the video is behind content */
+        }
+
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -22,6 +32,8 @@
             background: rgba(255, 255, 255, 0.9);
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Ensure content is above video */
         }
         header {
             text-align: center;
@@ -55,7 +67,7 @@
             transform: translateY(30px);
             animation: fadeInUp 1.2s ease forwards;
         }
-        /* 轻微滑动加淡入效果 */
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
@@ -102,6 +114,7 @@
         a:hover {
             text-decoration: underline;
         }
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -111,101 +124,95 @@
             background: rgba(0, 0, 0, 0.1);
             border-radius: 12px;
         }
+        
+        .copy-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .copy-btn:hover {
+            background: linear-gradient(90deg, #ff6b81, #ff9472);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .centered-text {
+            text-align: center;
+            font-size: 1.2em;
+            color: #2b6cb0;
+            margin-top: 20px;
+        }
+
+        .notice-text {
+            text-align: center;
+            font-size: 1em;
+            margin: 10px 0;
+            color: #e53e3e;
+            font-weight: bold;
+            background: rgba(229, 62, 62, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="bkg/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
     <div class="container">
         <header>
             <h1>恭喜你进入秘密页面！</h1>
         </header>
 
-<div class="section">
-    <h2>三网优化</h2>
-    <button class="copy-btn" onclick="copyToClipboard('https://hujunge.nyc.mn/878ed365-55a5-4778-b58d-b8837996a3e8?sub=alvless.comorg.us.kg')">复制通用导入链接</button>
-    <p class="centered-text">  <a href="clash://install-config?url=https://hujunge.nyc.mn/878ed365-55a5-4778-b58d-b8837996a3e8?sub=alvless.comorg.us.kg">CLASH一键导入</a></p>
-    <p class="notice-text">ps: 订阅超时可反复订阅或挂上梯子订阅</p>
-</div>
+        <div class="section">
+            <h2>三网优化</h2>
+            <button class="copy-btn" onclick="copyToClipboard('https://hujunge.nyc.mn/878ed365-55a5-4778-b58d-b8837996a3e8?sub=alvless.comorg.us.kg')">复制通用导入链接</button>
+            <p class="centered-text"><a href="clash://install-config?url=https://hujunge.nyc.mn/878ed365-55a5-4778-b58d-b8837996a3e8?sub=alvless.comorg.us.kg">CLASH一键导入</a></p>
+            <p class="notice-text">ps: 订阅超时可反复订阅或挂上梯子订阅</p>
+        </div>
 
-<div class="section">
-    <h2>CLASH推荐</h2>
-    <button class="copy-btn" onclick="copyToClipboard('https://sub.hujunge.ggff.net/66666')">复制 CLASH 推荐1 更新频率高 多地区</button>
-    <button class="copy-btn" onclick="copyToClipboard('https://sub.cfip.nyc.mn/66666')">复制 CLASH 推荐2 稳定 多地区</button>
-    <button class="copy-btn" onclick="copyToClipboard('https://cmcc.cfip.nyc.mn/66666')">复制 CLASH 推荐3 移动推荐（国内，流媒体不解锁）</button>
-    <p class="centered-text"><a href="https://sub.2c.lol/">其他客户端请使用订阅转换</a></p>
-    <p class="centered-text"><a href="https://github.com/chen08209/FlClash/releases/">推荐使用Flclash</a></p>
+        <div class="section">
+            <h2>CLASH推荐</h2>
+            <button class="copy-btn" onclick="copyToClipboard('https://sub.hujunge.ggff.net/66666')">复制 CLASH 推荐1 更新频率高 多地区</button>
+            <button class="copy-btn" onclick="copyToClipboard('https://sub.cfip.nyc.mn/66666')">复制 CLASH 推荐2 稳定 多地区</button>
+            <button class="copy-btn" onclick="copyToClipboard('https://cmcc.cfip.nyc.mn/66666')">复制 CLASH 推荐3 移动推荐（国内，流媒体不解锁）</button>
+            <p class="centered-text"><a href="https://sub.2c.lol/">其他客户端请使用订阅转换</a></p>
+            <p class="centered-text"><a href="https://github.com/chen08209/FlClash/releases/">推荐使用Flclash</a></p>
+        </div>
 
-</div>
+        <div class="section">
+            <h2>免责声明</h2>
+            <p class="notice-text">免费订阅由网上收集转载，无任何收费！谨防上当受骗！</p>
+            <p class="notice-text">订阅仅供学习使用，请勿用作任何非学习途径！</p>
+        </div>
 
-<div class="section">
-    <h2>免责声明</h2>
-    <p class="notice-text">免费订阅由网上收集转载，无任何收费！谨防上当受骗！</p>
-    <p class="notice-text">订阅仅供学习使用，请勿用作任何非学习途径！</p>
-</div>
+        <div class="footer">
+            <p>© 2024 ChatGPT. 告示。</p>
+        </div>
+    </div>
 
-<div class="footer">
-    <p>© 2024 ChatGPT. 告示。</p>
-</div>
-
-<style>
-    .copy-btn {
-        display: block;
-        width: 100%;
-        padding: 12px 20px;
-        margin: 10px 0;
-        background: linear-gradient(90deg, #ff7e5f, #feb47b);
-        border: none;
-        border-radius: 8px;
-        color: #fff;
-        font-size: 1.1em;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-    }
-    .copy-btn:hover {
-        background: linear-gradient(90deg, #ff6b81, #ff9472);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .centered-text {
-        text-align: center;
-        font-size: 1.2em;
-        color: #2b6cb0;
-        margin-top: 20px;
-    }
-
-    .notice-text {
-        text-align: center;
-        font-size: 1em;
-        margin: 10px 0;
-        color: #e53e3e;
-        font-weight: bold;
-        background: rgba(229, 62, 62, 0.1);
-        padding: 10px;
-        border-radius: 8px;
-    }
-
-    .footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 0.9em;
-        color: #718096;
-        border-top: 1px solid #e2e8f0;
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        margin-top: 40px;
-    }
-</style>
-
-<script>
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function() {
-        alert('复制成功！' );
-    }, function(err) {
-        console.error('复制失败: ', err);
-    });
-}
-</script>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('复制成功！');
+            }, function(err) {
+                console.error('复制失败: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
