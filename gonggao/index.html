@@ -35,10 +35,12 @@
             position: relative;
             z-index: 1; /* Ensure content is above video */
         }
+
         header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         header h1 {
             font-size: 3em;
             margin: 0;
@@ -50,6 +52,7 @@
             animation: gradientFlow 8s ease-in-out infinite;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
+
         @keyframes gradientFlow {
             0% {
                 background-position: 0% 50%;
@@ -61,6 +64,7 @@
                 background-position: 0% 50%;
             }
         }
+
         .section {
             margin-bottom: 30px;
             opacity: 0;
@@ -90,13 +94,16 @@
             animation: subtleTextGlow 4s ease-in-out infinite;
             transition: border-bottom 0.4s ease;
         }
+
         .section h2:hover {
             border-bottom: 2px solid #38b2ac;
         }
+
         @keyframes subtleTextGlow {
             0%, 100% {
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
             }
+
             50% {
                 text-shadow: 2px 2px 6px rgba(56, 178, 172, 0.6);
             }
@@ -111,6 +118,7 @@
             color: #3182ce;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -124,7 +132,7 @@
             background: rgba(0, 0, 0, 0.1);
             border-radius: 12px;
         }
-        
+
         .copy-btn {
             display: block;
             width: 100%;
@@ -140,6 +148,7 @@
             transition: background 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
+
         .copy-btn:hover {
             background: linear-gradient(90deg, #ff6b81, #ff9472);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
