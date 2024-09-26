@@ -74,8 +74,8 @@
     </style>
 </head>
 <body>
-    <video id="background-video" autoplay muted loop preload="auto">
-        <source src="/bkg/1.mp4" type="video/mp4">
+    <video autoplay muted loop preload="auto">
+        <source src="/bkg/video.mp4" type="video/mp4">
         您的浏览器不支持视频标签。
     </video>
     <h1>订阅发布地址</h1>
@@ -104,26 +104,6 @@
     </div>
 
     <script>
-        // 定义要循环播放的视频列表
-        const videos = [
-            '/bkg/1.mp4',
-            '/bkg/2.mp4',
-            '/bkg/3.mp4'
-        ];
-
-        let currentVideoIndex = 0;
-        const videoElement = document.getElementById('background-video');
-
-        // 切换视频函数
-        function changeVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            videoElement.src = videos[currentVideoIndex];
-            videoElement.play();
-        }
-
-        // 每 30 秒切换一次视频
-        setInterval(changeVideo, 30000);
-
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
                 alert('链接已复制!');
