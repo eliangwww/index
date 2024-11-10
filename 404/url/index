@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5; url=https://example.com"> <!-- 设置5秒后跳转的URL -->
+    <title>跳转中...</title>
+    <style>
+        /* 样式：页面居中，大标题 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- 大标题，提示用户页面正在跳转 -->
+    <h1>页面跳转中...</h1>
+    <p>如果页面没有自动跳转，请<a href="https://example.com">点击这里</a>。</p>
+
+    <!-- 可在5秒内提示用户，页面即将跳转 -->
+</body>
+</html>
