@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Connectivity Checker</title>
+</head>
+<body>
+    <h1>Node Connectivity Checker</h1>
+    <input type="text" id="nodeLinks" value="https://www.gstatic.com/generate_204" placeholder="Enter node links separated by commas">
+    <button onclick="checkConnectivity()">Check Connectivity</button>
+    <div id="results"></div>
+
+    <script>
+        async function checkConnectivity() {
+            const nodeLinksInput = document.getElementById('nodeLinks').value;
+            const nodeLinks = nodeLinksInput.split(',').map(link => link.trim());
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            for (const link of nodeLinks) {
+                try {
+                    const response = await fetch(link, { method: 'HEAD' });
+                    if (response.ok) {
+                        resultsDiv.innerHTML += `<p style="color:green;">${link}: Connected</p>`;
+                    } else {
+                        resultsDiv.innerHTML += `<p style="color:red;">${link}: Not connected</p>`;
+                    }
+                } catch (error) {
+                    resultsDiv.innerHTML += `<p style="color:red;">${link}: Not connected</p>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
