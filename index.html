@@ -88,12 +88,14 @@
     <script>
         // 获取当前主机名
         const hostname = window.location.hostname;
+        // 将主机名转换为大写
+        const uppercaseHostname = hostname.toUpperCase();
 
         // 设置页面的 title
-        document.getElementById('dynamicTitle').textContent = hostname;
+        document.getElementById('dynamicTitle').textContent = uppercaseHostname;
 
         // 设置 h1 的内容
-        document.getElementById('dynamicH1').textContent = hostname;
+        document.getElementById('dynamicH1').textContent = uppercaseHostname;
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
