@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFIP.NYC.MN</title>
+    <title id="dynamicTitle"></title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -78,13 +78,23 @@
         <source src="https://backup.paste.916300.xyz/api/file-view/Jm2ChU" type="video/mp4">
         您的浏览器不支持视频标签。
     </video>
-    <h1>CFIP.NYC.MN</h1>
+    <h1 id="dynamicH1"></h1>
+    <div class="container">
         <div class="link-card">
             <a href="https://url.916300.xyz/advanced-proxy?url=http%3A%2F%2Ft.me%2Fbmchatting_bot">Contact Me</a>
         </div>
     </div>
 
     <script>
+        // 获取当前主机名
+        const hostname = window.location.hostname;
+
+        // 设置页面的 title
+        document.getElementById('dynamicTitle').textContent = hostname;
+
+        // 设置 h1 的内容
+        document.getElementById('dynamicH1').textContent = hostname;
+
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
                 alert('链接已复制!');
