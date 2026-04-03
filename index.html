@@ -28,7 +28,6 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            transition: filter 0.5s ease;
         }
 
         /* 标题样式：增加文字阴影提高可读性 */
@@ -49,23 +48,27 @@
             z-index: 1;
         }
 
-        /* 链接卡片样式 */
+        /* 超透明链接卡片样式 */
         .link-card {
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px); /* 玻璃拟态效果 */
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* 关键修改：背景设为几乎全透明 (0.05) */
+            background-color: rgba(255, 255, 255, 0.05);
+            /* 移除了 backdrop-filter (模糊效果)，让背景彻底透出来 */
+            /* 移除了 1px solid rgba(255, 255, 255, 0.2); 边框 */
+            
             border-radius: 12px;
             padding: 20px;
             margin: 15px;
             text-align: center;
             width: 200px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* 增加过渡效果的时间，让显现更柔和 */
+            transition: all 0.4s ease;
             cursor: pointer;
         }
 
+        /* 悬停时：卡片显现，增加不透明度 */
         .link-card:hover {
-            transform: translateY(-5px) scale(1.05);
-            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2); /* 悬停时恢复一定不透明度，增加反馈 */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
@@ -75,6 +78,8 @@
             font-weight: bold;
             font-size: 1.1rem;
             display: block;
+            /* 增加文字阴影，防止文字在亮色背景下看不清 */
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
         }
 
         /* 右下角声音状态提示 */
